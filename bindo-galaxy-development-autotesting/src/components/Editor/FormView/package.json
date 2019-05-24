@@ -1,0 +1,6 @@
+{
+  "name": "form-view-editor",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./FormView.js"
+}

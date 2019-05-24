@@ -1,0 +1,48 @@
+.b-g-schedule {
+  position: relative;
+
+  &-custom-button-group {
+    z-index: 10;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
+
+  .b-g-scheduler-show-title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+    .b-g-scheduler-show-title-left {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      overflow: hidden;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    .b-g-scheduler-show-title-right {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      overflow: hidden;
+
+      p {
+        margin-bottom: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}

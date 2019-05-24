@@ -1,0 +1,100 @@
+.bg-c-dhtmlx-scheduler {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+
+  .dhx_timeline_scale_header {
+    display: none;
+  }
+
+  & .timeline_item_separator {
+    float: left;
+    background-color: #cecece;
+    width: 1px;
+    height: 100% !important;
+  }
+
+  & .collection_label .timeline_item_cell {
+    line-height: 60px;
+  }
+
+  & .dhx_cal_header .dhx_scale_bar {
+    line-height: 26px;
+    color: black;
+  }
+
+  & .dhx_mini_calendar .dhx_year_week,
+  & .dhx_mini_calendar .dhx_scale_bar {
+    height: 30px !important;
+  }
+}
+
+.bg-c-editor-layout-content {
+  .bg-c-dhtmlx-scheduler {
+    & .timeline_item_cell {
+      float: left;
+      height: 100% !important;
+      font-size: 14px;
+      text-align: center;
+      line-height: 50px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+
+.bg-c-parser-listview-content {
+  .bg-c-dhtmlx-scheduler {
+    & .timeline_item_cell {
+      float: left;
+      height: 100% !important;
+      font-size: 14px;
+      text-align: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      box-sizing: border-box;
+    }
+
+    .collection_label {
+      box-sizing: border-box;
+      width: 200px !important;
+      overflow: hidden;
+      z-index: 99;
+      background-color: #fff;
+    }
+
+    .dhx_timeline_label_wrapper {
+      width: 200px !important;
+
+      .dhx_matrix_scell {
+        width: 200px !important;
+      }
+    }
+
+    .dhx_timeline_data_wrapper {
+      padding-left: 200px !important;
+    }
+
+    .timeline_item_separator_top_line {
+      width: 100px;
+      height: 1px;
+      background: #cecece;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      z-index: 300;
+      overflow: hidden;
+      opacity: 1;
+    }
+  }
+}
+
+.dhx_cal_event_line {
+  padding: 5px;
+}
+
+.collection_label .timeline_item_cell:last-child {
+  border-right: 1px solid #cecece;
+}

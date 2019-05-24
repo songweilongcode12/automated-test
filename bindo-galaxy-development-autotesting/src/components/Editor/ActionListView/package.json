@@ -1,0 +1,6 @@
+{
+  "name": "action-list-view",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./ActionListView.js"
+}

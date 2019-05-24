@@ -1,0 +1,48 @@
+.bg-c-comments {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &-list {
+    flex: 1;
+    overflow: auto;
+    height: 50px;
+    padding: 0 10px;
+  }
+
+  &-comment {
+    height: 44px;
+    line-height: 44px;
+    display: flex;
+    border-top: 1px solid #51679b2e;
+
+    &-input {
+      flex: 1;
+    }
+
+    &-send {
+      width: 44px;
+      font-size: 22px;
+      margin-top: 11px;
+    }
+  }
+
+  &-loading {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 50%;
+    margin-top: -10%;
+  }
+
+  & .ant-list-item {
+    align-items: start;
+  }
+
+  & .ant-list-item-content {
+    max-width: 90px;
+    flex: none;
+    text-align: right;
+    display: block;
+  }
+}

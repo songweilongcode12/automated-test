@@ -1,0 +1,6 @@
+{
+  "name": "bindo-code-mirror",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./BindoCodeMirror.js"
+}

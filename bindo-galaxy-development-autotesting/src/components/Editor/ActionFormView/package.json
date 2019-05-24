@@ -1,0 +1,6 @@
+{
+  "name": "action-view",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./ActionFormView.js"
+}

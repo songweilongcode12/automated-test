@@ -1,0 +1,6 @@
+{
+  "name": "liquid-template-view-editor",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./LiquidTemplateView.js"
+}

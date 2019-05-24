@@ -1,0 +1,74 @@
+.bg-c-drag-node {
+  position: relative;
+  border: 1px solid #d9d9d9;
+  background: #f1faff;
+  margin-top: 5px;
+  padding: 5px 8px;
+
+  &:hover {
+    background: #dcf1ff;
+  }
+
+  &-bar {
+    display: flex;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 2px;
+
+    &-space {
+      flex: 1;
+    }
+
+    &-btn {
+      &:hover {
+        cursor: pointer;
+        color: #40a9ff;
+      }
+    }
+  }
+
+  &-help-tooltip {
+    margin-left: 3px;
+    color: #40a9ff;
+  }
+}
+
+.bg-c-drag-module-parent-node {
+  background: #f0f0f0;
+
+  &:hover {
+    background: #f5f5f5;
+  }
+}
+
+.bindo-galaxy-editor-formview-tabsmodel {
+  border: 1px solid #ccc;
+
+  .ant-tabs-extra-content {
+    margin-right: 10px;
+  }
+
+  .ant-tabs-bar {
+    margin: 0;
+  }
+
+  .ant-tabs-tabpane {
+    background: #fff;
+    padding: 2px 10px;
+  }
+
+  &-pane {
+    min-height: 200px;
+  }
+}
+
+.bindo-galaxy-editor-formview-columns {
+  &-col {
+    padding: 3px;
+    border: 1px solid #ddd;
+  }
+
+  &-panel {
+    min-height: 160px;
+  }
+}

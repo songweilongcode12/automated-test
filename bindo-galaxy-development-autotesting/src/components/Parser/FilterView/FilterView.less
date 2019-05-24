@@ -1,0 +1,145 @@
+.bg-c-parser-filterview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+
+  &-filter-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 20px;
+
+    &.verbose {
+      border: 1px solid #d9d9d9;
+    }
+  }
+
+  &-filter-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-height: 90px;
+    overflow: auto;
+  }
+
+  &-tag {
+    margin-right: 20px;
+
+    &.concise {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &-title {
+      max-width: 200px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      margin-right: 10px;
+    }
+  }
+
+  &-concise-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 8px;
+    margin-left: 5px;
+
+    &-icon {
+      font-size: 12px;
+      margin-top: 3px;
+    }
+  }
+
+  &-add-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+  }
+
+  &-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 5px;
+
+    &-space {
+      flex: 1;
+    }
+
+    &-favorites {
+      margin-right: 8px;
+    }
+  }
+
+  &-favorites-menu {
+    width: 240px;
+
+    .favorites-dropdown {
+      width: 240px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      height: 40px;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .save-options {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+
+      .save-options-title {
+        width: 100%;
+        font-size: 14px;
+        margin-bottom: 9px;
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .save-options-filter {
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 8px;
+        align-self: flex-start;
+      }
+
+      .save-options-input {
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        box-sizing: border-box;
+        border-radius: 4px;
+        width: 226px;
+        height: 32px;
+        margin-bottom: 12px;
+      }
+
+      .save-options-btn {
+        background: #1890ff;
+        border-radius: 4px;
+        width: 226px;
+        height: 32px;
+      }
+    }
+  }
+}

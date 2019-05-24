@@ -1,0 +1,6 @@
+{
+  "name": "bindo-video-player",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./BindoVideoPlayer.js"
+}

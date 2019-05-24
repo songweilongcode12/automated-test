@@ -1,0 +1,6 @@
+{
+  "name": "filterRules-form-view",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./FilterRulesFormView.js"
+}

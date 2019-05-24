@@ -1,0 +1,120 @@
+/*
+MqlkindBinary     Mqlkind = "BINARY" // GT LT EQ
+MqlkindLogical    Mqlkind = "LOGICAL"  //AND OR
+MqlkindMath       Mqlkind = "MATH" //ADD SUB MULTI DIVISION
+MqlkindEvaluation Mqlkind = "EVALUATION" //$.self.name + 1
+MqlkindVariable   Mqlkind = "VARIABLE" // $.self.name, MQL.Value
+MqlkindLiteral    Mqlkind = "LITERAL" //1 true "1",     MQL.Value 
+MqlkindCall       Mqlkind = "CALL" //IS_NULL($.self.name)
+*/
+{
+    "uuid" : "",
+    "module_id" : "",
+    "store_id" : "",
+    "label" : "",
+    "name" : "",
+    "type" : "basic | relation | link",
+    "dataType" : "TEXT | ONETOMANY",
+    "i18n" : {},
+    "viewType" : "",
+    "readOnly" : false, //true,false,NULL
+    "invisible" :false,
+    "isBindField" : false,
+    "required": false,
+    "allowValues" : {  //for select/checkbox etc...
+        "type" : "static | dynamic",
+        "items" : [  //for type = static
+            {
+                "key": "",
+                "value": ""
+            }
+        ],
+        "moduleID" : "", //for dynamic
+        "labelField" : "", //for dyanmic
+        "valueField" : "", //for dynamic
+        "queryConditions" : [ //for dynamic
+            {
+                "formula" : "ast"
+            },
+            {
+                "formula" : "ast"
+            },
+            {
+                "formula" : "ast"
+            }
+        ]
+    },
+    //数据存在强一致的关联，允许创建对象的同时，创建relation module record.
+    //强制使用关联字段的映射关系作为where eq条件。
+    //queryConditions也会继续应用
+    "relation" : { //for One2Many,One2One?
+        "relationModuleID":"",
+        "fieldMapping":[
+            {
+                "field" : "",  //当前Module的字段名
+                "relatedField" //目标Module的字段名
+            },
+            ...
+        ]
+    },
+    //只允许进行query时候关联，配合queryConditions
+    "link" : {
+        "linkModuleID" : ""
+    },
+    //定义relation/link 的字段的逻辑意义
+    "queryConditions" : [
+        {
+            "formula" : "orders.created_at > Now() - 15days"
+        },
+        {
+            "formula" : "ast"
+        },
+        {
+            "formula" : "ast"
+        }
+    ],
+    "queryOrder" : {
+        "order_field" : "",
+        "order_by" : "DESC | ASC"
+    },
+    "queryEvaluation" : {
+        "type" : "plain | aggregate",
+        "selectFields" : ["Field_name_1","Field_name_2"], //for plain
+        "aggregate" : { //for aggregate
+          "formula" : "AST"
+        }
+    },
+    "listens" : [
+        {
+            "field" : "$.self.field_name",
+            "evaluations" : [
+                {
+                    "formula" : "bool ast", // $.self.a > 1 || $.self.b + $.self.c = 100
+                    "value" : "value ast" // $.self.a  $.self.a + $.self.b
+                },
+                {
+                    "formula" : "bool ",
+                    "value" : "$.self.field_name + $.self.field_name"
+                }
+            ]
+        }
+    ],
+    "validations" : [
+        {
+            //当kind == required
+            //如果formual == true,表示字段为required
+            //当kind == direct
+            //如果formual == true,则表示字段验证通过
+            "kind" : "required | readOnly | invisible | direct",
+            "formual" : "bool ast", //$.self.field_name != 1
+            "validationErrorMessage" : "field `field_name` must be 1"
+        },
+        {
+            "formual" : "bool ast", //IS_NULL($.self.field_name)
+            "validationErrorMessage" : "field `field_name` can't allowed NULL"
+        },
+        {
+            "formual" : "bool ast", //$.self.filed_name <= $.self.other_field_name
+            "validationErrorMessage" : "field `field_name` must be gt `other_field_name`"
+        }
+    ]

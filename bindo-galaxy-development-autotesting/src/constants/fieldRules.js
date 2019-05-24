@@ -1,0 +1,10 @@
+export default {
+  REQUIRED: 'REQUIRED',
+  STRING: 'STRING',
+  LENGTH: 'LENGTH',
+  REGEXP: 'REGEXP',
+  INTEGER: 'INTEGER',
+  FLOAT: 'FLOAT',
+  URL: 'URL',
+  EMAIL: 'EMAIL',
+};

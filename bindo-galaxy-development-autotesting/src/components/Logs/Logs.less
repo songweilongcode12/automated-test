@@ -1,0 +1,92 @@
+.bg-c-logs {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &-list {
+    flex: 1;
+    overflow: auto;
+    height: 500px;
+    padding: 0 10px;
+  }
+
+  &-log {
+    height: 44px;
+    display: flex;
+    border-top: 1px solid #51679b2e;
+
+    &-action {
+      margin-top: 6px;
+      margin-right: 5px;
+    }
+
+    &-time {
+      margin-top: 6px;
+    }
+
+    &-exportButton {
+      margin-top: 6px;
+      margin-left: 5px;
+    }
+  }
+
+  &-actionname {
+    color: blue;
+  }
+
+  &-username {
+    margin-right: 10px;
+  }
+
+  &-title {
+    word-break: break-word;
+  }
+
+  &-loading {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 50%;
+    margin-top: -10%;
+  }
+
+  & .ant-list-item {
+    align-items: start;
+  }
+
+  & .ant-list-item-content {
+    max-width: 90px;
+    flex: none;
+    text-align: right;
+    display: block;
+  }
+
+  &-loginfo {
+    & .ant-confirm-content {
+      margin: 10px 20px;
+      overflow: auto;
+      max-height: 400px;
+    }
+
+    & .ant-confirm-btns {
+      margin: 0;
+      text-align: center;
+      float: none;
+    }
+
+    & .ant-modal-confirm-content {
+      margin: 0;
+      margin-top: 8px;
+      height: 500px;
+      overflow: auto;
+    }
+
+    & .first-column {
+      width: 110px;
+    }
+
+    & .second-column {
+      max-width: 440px;
+    }
+  }
+}

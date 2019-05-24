@@ -1,0 +1,6 @@
+{
+  "name": "bindo-dhtmlx-gantt",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Gantt.js"
+}

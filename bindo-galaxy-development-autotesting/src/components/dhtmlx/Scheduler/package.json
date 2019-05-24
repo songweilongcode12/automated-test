@@ -1,0 +1,6 @@
+{
+  "name": "bindo-dhtmlx-scheduler",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Scheduler.js"
+}

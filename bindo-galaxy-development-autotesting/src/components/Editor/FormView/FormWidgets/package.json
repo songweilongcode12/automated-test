@@ -1,0 +1,6 @@
+{
+  "name": "FormWidgets",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./FormWidgets.js"
+}

@@ -1,0 +1,101 @@
+.bg-c-header {
+  height: 64px;
+  padding: 0 40px;
+  color: #fff;
+
+  &.dashboard {
+    background: #002140;
+  }
+
+  &.builder {
+    background-image: url('/images/module-builder-topbar.jpg');
+  }
+
+  &-skeleton {
+    min-width: 100px;
+    margin-top: 8px;
+  }
+
+  &-node {
+    display: inline-flex;
+    height: 100%;
+    line-height: 64px;
+
+    &.logo {
+      margin-top: -60px;
+      font-size: 190px;
+    }
+
+    &-icon {
+      margin-right: 5px;
+      font-size: 20px;
+    }
+
+    &-galaxy-state-icon.ant-btn {
+      padding: 0;
+      display: flex;
+      background: transparent;
+      border: none;
+      float: none;
+      margin-top: 13px;
+      height: 43px;
+      width: 38px;
+      font-size: 38px;
+      color: #ddd;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    &.right {
+      float: right;
+      margin-left: 30px;
+    }
+  }
+
+  &-store-drop {
+    &-search {
+      width: 100%;
+    }
+
+    &-content {
+      max-width: 360px;
+      max-height: 280px;
+      overflow: auto;
+    }
+
+    & .ant-dropdown-menu-item:hover {
+      background-color: white;
+    }
+
+    &-item {
+      display: flex;
+      margin: 5px 0;
+
+      :hover {
+        background-color: #e6f7ff;
+      }
+    }
+
+    &-title {
+      margin-left: 8px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      &.selected {
+        color: #0e45bd;
+      }
+    }
+
+    &-btn-wrapper {
+      text-align: center;
+      border-top: 1px solid #ccc;
+    }
+
+    &-btn {
+      margin: 0 10px;
+    }
+  }
+}

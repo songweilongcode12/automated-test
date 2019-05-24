@@ -1,0 +1,52 @@
+.bg-c-dragside {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+
+  &-left {
+    display: flex;
+    border-left: 1px solid #51679b2e;
+    border-right: 1px solid #51679b2e;
+  }
+
+  &-content {
+    display: flex;
+    flex: 1;
+    position: relative;
+    overflow: auto;
+
+    &.column {
+      flex-direction: column;
+    }
+
+    .ant-tabs.rightside-tabs {
+      height: 100%;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+
+      .ant-tabs-bar {
+        margin: 0 0 2px 0;
+      }
+
+      .ant-tabs-content {
+        flex: 1;
+      }
+    }
+  }
+
+  &-right {
+    display: flex;
+    border-left: 1px solid #51679b2e;
+    border-right: 1px solid #51679b2e;
+  }
+
+  &-dragline {
+    width: 3px;
+
+    &:hover {
+      background-color: #2593fb;
+      cursor: col-resize;
+    }
+  }
+}

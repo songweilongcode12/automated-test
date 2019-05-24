@@ -1,0 +1,6 @@
+{
+  "name": "bindo-pages",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Pages.js"
+}
