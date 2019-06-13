@@ -1,31 +1,41 @@
 
 // 编辑普通module
+const publicdata = require('../../basic-control/publicdata');
+
 async function editmodule( driver, webdriver) {
   const {
     By,
     until,
   } = webdriver;
   try {
-    console.info('进乳编辑module页面')
-    await driver.sleep(3000);
-    await driver.executeScript( 'window.scrollTo(0,document.body.scrollHeight);');
-    const button5 = await driver.wait(until.elementLocated(By.xpath("(//div[@class='bg-galaxy-dropdown-action ant-dropdown-trigger'])[last()]")), 5000);
-    await button5.click();
+    console.info('进入编辑module页面')
     await driver.sleep(5000);
-    const buttonedits = await driver.wait(until.elementLocated(By.xpath("//button[@type='button' and ./span[contains(text(),'编辑')]]")),4000);
-    await buttonedits.click();
+    await driver.executeScript( 'window.scrollTo(0,document.body.scrollHeight);');
+    await driver.wait(until.elementLocated(By.xpath("(//div[@class='bg-galaxy-dropdown-action ant-dropdown-trigger'])[last()]")),5000).click();
+    await driver.sleep(5000);
+    await driver.wait(until.elementLocated(By.xpath("//button[@type='button' and ./span[contains(text(),'编辑')]]")),4000).click();
     await driver.sleep(2000);
-    const editdatas1 = (`v1.0.0${new Date().getTime()}`);
     await driver.findElement(By.xpath("//input[@id='name']")).clear();
-    await driver.findElement(By.xpath("//input[@id='name']")).sendKeys(`E_${editdatas1}`);
+    await driver.findElement(By.xpath("//input[@id='name']")).sendKeys(publicdata.editmoduledata);
     await driver.sleep(1000);
     await driver.findElement(By.xpath("//input[@placeholder='请输入模块名称']")).clear();
-    await driver.findElement(By.xpath("//input[@placeholder='请输入模块名称']")).sendKeys(`E_${editdatas1}`);
+    await driver.findElement(By.xpath("//input[@placeholder='请输入模块名称']")).sendKeys(publicdata.editmoduledata);
     await driver.findElement(By.xpath("//button[@class='ant-btn ant-btn-primary']")).click();
+    await driver.sleep(5000);
+    const getmodulename = await driver.findElement(By.xpath(publicdata.moduelpath))
+    const modulename = getmodulename.getText()
+    await getmodulename.click()
     await driver.sleep(3000);
-    console.info('编辑完成')
-    // await driver.executeScript('window.location.reload();');
-    // await driver.sleep(8000);
+    await driver.findElement(By.className('bindo-galaxy-module-breadcrumb ant-breadcrumb'))
+      .getText().then(textValue => {
+        if(textValue.match(modulename)){
+          console.info('编辑module检测面包屑成功');}else
+        {
+          console.info('编辑module检测面包屑失败');
+        };
+        console.info(textValue);
+      });
+    console.info('module编辑完成')
   }catch (error){
     console.error(error)
   }
@@ -47,9 +57,8 @@ async function editmoduleMenufolder( driver, webdriver) {
     const buttonedit6 = await driver.wait(until.elementLocated(By.xpath("//button[@type='button' and ./span[contains(text(),'编辑')]]")),4000);
     await buttonedit6.click();
     await driver.sleep(2000);
-    const editdatas2 = (`v1.0.0${new Date().getTime()}`);
     await driver.findElement(By.xpath("//input[@id='name']")).clear();
-    await driver.findElement(By.xpath("//input[@id='name']")).sendKeys(`E_${editdatas2}`);
+    await driver.findElement(By.xpath("//input[@id='name']")).sendKeys(publicdata.editmoduledata);
     await driver.findElement(By.xpath("//button[@class='ant-btn ant-btn-primary']")).click();
     await driver.sleep(3000);
     // await driver.executeScript('window.location.reload();');
@@ -73,9 +82,8 @@ async function deitmoduleEMbedde( driver, webdriver) {
     const buttonedits7 = await driver.wait(until.elementLocated(By.xpath("//button[@type='button' and ./span[contains(text(),'编辑')]]")),4000);
     await buttonedits7.click();
     await driver.sleep(2000);
-    const editdatas3 = (`v1.0.0${new Date().getTime()}`);
     await driver.findElement(By.xpath("//input[@id='name']")).clear();
-    await driver.findElement(By.xpath("//input[@id='name']")).sendKeys(`E_${editdatas3}`);
+    await driver.findElement(By.xpath("//input[@id='name']")).sendKeys(publicdata.editmoduledata);
     await driver.sleep(1000);
     await driver.findElement(By.xpath("//textarea[@class='ant-input']")).clear();
     await driver.findElement(By.xpath("//textarea[@class='ant-input']")).sendKeys('https://www.baidu.com/');
@@ -104,11 +112,10 @@ async function editmoduleSetting( driver, webdriver) {
     const buttonedits8 = await driver.wait(until.elementLocated(By.xpath("//button[@type='button' and ./span[contains(text(),'编辑')]]")),4000);
     await buttonedits8.click();
     await driver.sleep(2000);
-    const editdatas4 = (`v1.0.0${new Date().getTime()}`);
     await driver.findElement(By.xpath("//input[@id='name']")).clear();
-    await driver.findElement(By.xpath("//input[@id='name']")).sendKeys(`E_${ editdatas4}`);
+    await driver.findElement(By.xpath("//input[@id='name']")).sendKeys(publicdata.editmoduledata);
     await driver.findElement(By.xpath("//input[@id='moduleName']")).clear();
-    await driver.findElement(By.xpath("//input[@id='moduleName']")).sendKeys(`E_${ editdatas4}`)
+    await driver.findElement(By.xpath("//input[@id='moduleName']")).sendKeys(publicdata.editmoduledata)
     await driver.findElement(By.xpath("//button[@class='ant-btn ant-btn-primary']")).click();
     await driver.sleep(3000);
     // await driver.executeScript('window.location.reload();');
@@ -130,10 +137,9 @@ async function editmoduleWikionly( driver, webdriver) {
     await driver.sleep(2000);
     const buttonedits9 = await driver.wait(until.elementLocated(By.xpath("//button[@type='button' and ./span[contains(text(),'编辑')]]")),4000);
     await buttonedits9.click();
-    const editdatas4 = (`v1.0.0${new Date().getTime()}`);
     await driver.sleep(2000);
     await driver.findElement(By.xpath("//input[@id='name']")).clear();
-    await driver.findElement(By.xpath("//input[@id='name']")).sendKeys(`E_${ editdatas4}`);
+    await driver.findElement(By.xpath("//input[@id='name']")).sendKeys(publicdata.editmoduledata);
     await driver.findElement(By.xpath("//button[@class='ant-btn ant-btn-primary']")).click();
     await driver.sleep(3000);
     // await driver.executeScript('window.location.reload();');

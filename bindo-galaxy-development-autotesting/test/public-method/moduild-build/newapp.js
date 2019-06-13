@@ -1,5 +1,6 @@
 
 // const assert = require('assert');
+const publicdata = require('../../basic-control/publicdata')
 const switchpath = require('./switchpath');
 // 新建普通app
 async function NewappAppstore( driver, webdriver) {
@@ -8,11 +9,11 @@ async function NewappAppstore( driver, webdriver) {
     until,
   } = webdriver;
   try{
+    console.info('开始新建应用级app')
     await driver.sleep(2000);
     await driver.wait(until.elementLocated(By.xpath("//button[@type='button'][contains(.,'新 建')]")),2500).click();
     await driver.sleep(3000)
-    const datatimes = (`v1.0.0${new Date().getTime()}`);
-    await driver.findElement(By.xpath("//input[@class='ant-input']")).sendKeys(datatimes);
+    await driver.findElement(By.xpath("//input[@class='ant-input']")).sendKeys(publicdata.newappdata);
     await driver.wait(until.elementLocated(By.xpath("//div[contains(@class,'ant-select-selection__rendered')]")),2000).click();
     await driver.wait(until.elementLocated(By.xpath("//li[contains(text(),'应用商店')]")),2000).click();
     await driver.wait(until.elementLocated(By.xpath("//input[@id='icon_obj']")),1000).click();
@@ -21,15 +22,8 @@ async function NewappAppstore( driver, webdriver) {
     await driver.sleep(2000);
     await driver.wait(until.elementLocated(By.xpath("//button[@type='button'][contains(.,'确 认')]")),4000).click();
     await driver.sleep(3000);
-    const arr = [
-      "//td[contains(.,'",
-      datatimes,
-      "')]",
-    ];
-    const path1 = arr.join('');
-    console.info(path1);
     await driver.sleep(3000);
-    const getname = await driver.wait(until.elementLocated(By.xpath(path1)),4000);
+    const getname = await driver.wait(until.elementLocated(By.xpath(publicdata.apppath)),4000);
     // await getname.click();
     const appname = getname.getText()
     await driver.sleep(3000);
@@ -43,16 +37,10 @@ async function NewappAppstore( driver, webdriver) {
         {
           console.info('新建app检测面包屑失败');
         };
-        console.info(textValue);
       });
     await switchpath.switchpath(driver, webdriver);
     await driver.sleep(3000);
-    // await driver.executeScript('window.location.reload();')
-    // await driver.sleep(3000);
-    // await driver.executeScript('window.scrollTo(0, document.body.scrollHeight)');
-    // await driver.sleep(3000);
-    // const loaclrows = await driver.wait(until.elementLocated(By.xpath("//td[contains(.,'"+datatimes+"')]")),4100);
-    // await loaclrows.click();
+    console.info('应用级app完成')
   } catch(error) {
     console.error(error)
   }
@@ -66,11 +54,11 @@ async function NewappSystem( driver, webdriver,) {
     until,
   } = webdriver;
   try{
+    console.info('开始新建系统级app')
     await driver.sleep(2000);
     await driver.wait(until.elementLocated(By.xpath("//button[@type='button'][contains(.,'新 建')]")),3000).click();
     await driver.sleep(3000);
-    const datatimes1 = (`v1.0.s${new Date().getTime()}`);
-    await driver.findElement(By.xpath("//input[@class='ant-input']")).sendKeys(datatimes1);
+    await driver.findElement(By.xpath("//input[@class='ant-input']")).sendKeys(publicdata.newappdata);
     await driver.sleep(500);
     await driver.findElement(By.xpath("//div[contains(@class,'ant-select-selection__rendered')]")).click();
     await driver.wait(until.elementLocated(By.xpath("//li[contains(text(),'系统')]")),3000).click();
@@ -81,16 +69,8 @@ async function NewappSystem( driver, webdriver,) {
     await driver.sleep(2000);
     await driver.wait(until.elementLocated(By.xpath("//button[@type='button'][contains(.,'确 认')]")),4000).click();
     await driver.sleep(3000);
-    const arr = [
-      "//td[contains(.,'",
-      datatimes1,
-      "')]",
-    ];
-    const path1 = arr.join('');
-    console.info(path1);
     await driver.sleep(3000);
-    const getname = await driver.wait(until.elementLocated(By.xpath(path1)),4000);
-    // await getname.click();
+    const getname = await driver.wait(until.elementLocated(By.xpath(publicdata.newappdata)),4000);
     const appname = getname.getText()
     await driver.sleep(3000);
     await driver.wait(until.elementLocated(By.xpath("(//div[@class='bg-galaxy-dropdown-action ant-dropdown-trigger'])[last()]")), 5000).click();
@@ -103,17 +83,11 @@ async function NewappSystem( driver, webdriver,) {
         {
           console.info('新建app检测面包屑失败');
         };
-        console.info(textValue);
+        // console.info(textValue);
       });
     await switchpath.switchpath(driver, webdriver);
     await driver.sleep(3000);
-    // await driver.executeScript('window.location.reload();');
-    // await driver.sleep(3000);
-    // await driver.executeScript('window.scrollTo(0, document.body.scrollHeight)');
-    // await driver.sleep(3000);
-    // var loacl_rows1 = await driver.wait(until.elementLocated(By.xpath("//td[contains(.,'"+datatimes1+"')]")),4100);
-    // await loacl_rows1.click();
-    // await driver.sleep(5000);
+    console.info('系统级app新建完成')
   }catch(error) {
     console.error(error)
   }
@@ -126,11 +100,11 @@ async function Newappcompany(driver, webdriver,) {
     until,
   } = webdriver;
   try {
+    console.info('开始新建企业级app')
     await driver.sleep(2000);
     await driver.wait(until.elementLocated(By.xpath("//button[@type='button'][contains(.,'新 建')]")),3000).click();
     await driver.sleep(3000);
-    const datatimes2 = (`v1.0.c${new Date().getTime()}`);
-    await driver.findElement(By.xpath("//input[@class='ant-input']")).sendKeys(datatimes2);
+    await driver.findElement(By.xpath("//input[@class='ant-input']")).sendKeys(publicdata.newappdata);
     await driver.sleep(500);
     await driver.findElement(By.xpath("//div[contains(@class,'ant-select-selection__rendered')]")).click();
     await driver.wait(until.elementLocated(By.xpath("//li[contains(text(),'企业')]")),3000).click();
@@ -141,15 +115,8 @@ async function Newappcompany(driver, webdriver,) {
     await driver.sleep(2000);
     await driver.wait(until.elementLocated(By.xpath("//button[@type='button'][contains(.,'确 认')]")),7000).click();
     await driver.sleep(3000);
-    const arr = [
-      "//td[contains(.,'",
-      datatimes2,
-      "')]",
-    ];
-    const path1 = arr.join('');
-    console.info(path1);
     await driver.sleep(3000);
-    const getname = await driver.wait(until.elementLocated(By.xpath(path1)),4000);
+    const getname = await driver.wait(until.elementLocated(By.xpath(publicdata.apppath)),4000);
     // await getname.click();
     const appname = getname.getText()
     await driver.sleep(3000);
@@ -165,17 +132,11 @@ async function Newappcompany(driver, webdriver,) {
         {
           console.info('新建app检测面包屑失败');
         };
-        console.info(textValue);
+        // console.info(textValue);
       });
     await switchpath.switchpath(driver, webdriver);
     await driver.sleep(3000);
-    // await driver.executeScript('window.location.reload();');// 刷新浏览器
-    // await driver.sleep(3000);
-  // await driver.executeScript('window.scrollTo(0, document.body.scrollHeight)');
-  // await driver.sleep(3000);
-  // var loacl_rows2 = await driver.wait(until.elementLocated(By.xpath("//td[contains(.,'"+datatimes2+"')]")),4100);
-  // await loacl_rows2.click();
-  // await driver.sleep(5000);
+    console.info('企业级app新建完成')
   } catch(error) {
     console.error(error)
   }
